@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignInComponent } from './sign-in.component';
+import { ComponentsModule } from '@components/components.module';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;
@@ -8,7 +9,8 @@ describe('SignInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInComponent ]
+      declarations: [ SignInComponent ],
+      imports: [ComponentsModule]
     })
     .compileComponents();
 
