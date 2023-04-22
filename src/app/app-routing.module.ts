@@ -5,6 +5,8 @@ import { SignInComponent } from '@auth/pages/sign-in/sign-in.component';
 import { SignUpComponent } from '@auth/pages/sign-up/sign-up.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AppointmentComponent } from './dashboard/pages/appointment/appointment.component';
+import { MyAppointmentsComponent } from './dashboard/pages/my-appointments/my-appointments.component';
 
 const routes: Routes = [
   {
@@ -14,7 +16,20 @@ const routes: Routes = [
     path: 'sign-up', component: SignUpComponent, title: 'BarberApp - Sign Up'
   },
   {
-    path: '', component: DashboardComponent, title: 'BarberApp - Dashboard'
+    path: '', redirectTo: 'dashboard', pathMatch: 'full'
+  },
+  {
+    path: 'dashboard', component: DashboardComponent, title: 'BarberApp - Dashboard',
+    children: [
+      {
+        path: '',
+        component: AppointmentComponent,
+      },
+      {
+        path: 'my-appointments',
+        component: MyAppointmentsComponent
+      }
+    ]
   }
 ];
 
