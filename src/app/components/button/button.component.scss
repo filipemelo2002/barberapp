@@ -12,7 +12,11 @@ button {
   margin-top: 16px;
   transition: background-color 0.2s;
 
-  &:hover {
+  &:hover:enabled {
     background: shade(#ff9000, 20%);
+  }
+
+  &:disabled {
+    opacity: 30%;
   }
 }

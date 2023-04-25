@@ -23,14 +23,14 @@ describe('ButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should emit click event', () => {
+  it('should emit click event', () => {
     component.onClick = jasmine.createSpyObj<EventEmitter<Event>>('onClick', ['emit']);
     button.dispatchEvent(new Event('click'));
     fixture.detectChanges();
     expect(component.onClick.emit).toHaveBeenCalled();
   })
 
-  fit('should render initial type', () => {
+  it('should render initial type', () => {
     component.type = 'submit';
     fixture.detectChanges();
     expect(button.getAttribute('type')).toEqual('submit')

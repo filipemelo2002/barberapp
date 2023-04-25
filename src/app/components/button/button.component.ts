@@ -12,6 +12,9 @@ export class ButtonComponent {
   @Output()
   onClick = new EventEmitter<Event>();
 
+  @Input()
+  disabled!: boolean | null;
+
   handleClick($event: Event) {
     this.onClick.emit($event);
   }
