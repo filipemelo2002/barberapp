@@ -23,4 +23,13 @@ describe('ToolbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should sign out', () => {
+    const spy = spyOn(window.localStorage, 'removeItem');
+    const button = fixture.nativeElement.querySelector('button') as HTMLInputElement;
+    button.click();
+    button.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+    expect(spy).toHaveBeenCalled();
+  })
 });
