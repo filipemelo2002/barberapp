@@ -45,14 +45,14 @@ describe('InputComponent', () => {
   });
 
   it('should emit onChange event', () => {
-    component.onChange = jasmine.createSpyObj<EventEmitter<string>>(
-      'onChange',
+    component.valueChange = jasmine.createSpyObj<EventEmitter<string>>(
+      'valueChange',
       ['emit']
     );
     input.value = 'testing@email.com';
     input.dispatchEvent(new Event('input'));
     fixture.detectChanges();
-    expect(component.onChange.emit).toHaveBeenCalled();
-    expect(component.onChange.emit).toHaveBeenCalledWith('testing@email.com');
+    expect(component.valueChange.emit).toHaveBeenCalled();
+    expect(component.valueChange.emit).toHaveBeenCalledWith('testing@email.com');
   });
 });

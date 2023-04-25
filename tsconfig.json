@@ -26,6 +26,8 @@
     "paths": {
       "@auth/*": ["./src/app/auth/*"],
       "@components/*": ["./src/app/components/*"],
+      "@entities/*": ["./src/app/entities/*"],
+      "@constants/*": ["./src/app/constants/*"],
     }
   },
   "angularCompilerOptions": {

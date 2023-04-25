@@ -13,12 +13,12 @@ export class InputComponent {
   placeholder?: string;
 
   @Input()
-  value?: string;
+  value!: string | undefined | null;
 
-  @Input()
-  onChange = new EventEmitter<string>();
+  @Output()
+  valueChange = new EventEmitter<string>();
 
   handleChange($event: string) {
-    this.onChange.emit($event);
+    this.valueChange.emit($event);
   }
 }

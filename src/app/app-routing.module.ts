@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AppointmentComponent } from './dashboard/pages/appointment/appointment.component';
 import { MyAppointmentsComponent } from './dashboard/pages/my-appointments/my-appointments.component';
+import { AuthGuardGuard } from '@auth/guards/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
     path: '', redirectTo: 'dashboard', pathMatch: 'full'
   },
   {
-    path: 'dashboard', component: DashboardComponent, title: 'BarberApp - Dashboard',
+    path: 'dashboard', component: DashboardComponent, title: 'BarberApp - Dashboard', canActivate: [AuthGuardGuard],
     children: [
       {
         path: '',
