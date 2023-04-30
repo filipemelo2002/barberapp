@@ -28,6 +28,7 @@
       "@components/*": ["./src/app/components/*"],
       "@entities/*": ["./src/app/entities/*"],
       "@constants/*": ["./src/app/constants/*"],
+      "@infra/*": ["./src/app/infra/*"]
     }
   },
   "angularCompilerOptions": {
