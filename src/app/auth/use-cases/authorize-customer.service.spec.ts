@@ -4,6 +4,7 @@ import { AuthorizeCustomerService } from './authorize-customer.service';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { Customer } from '@entities/customer';
+import { InfraModule } from '@infra/infra.module';
 
 describe('AuthorizeCustomerService', () => {
   let service: AuthorizeCustomerService;
@@ -18,7 +19,7 @@ describe('AuthorizeCustomerService', () => {
     httpClient = jasmine.createSpyObj('httpClient', ['post']);
     httpClient.post.and.returnValues(of(token));
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [InfraModule],
       providers: [{
         provide: HttpClient,
         useValue: httpClient
