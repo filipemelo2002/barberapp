@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignInComponent } from './sign-in.component';
 import { ComponentsModule } from '@components/components.module';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AuthorizeCustomerService } from '@auth/use-cases/authorize-customer.service';
+import { InfraModule } from '@infra/infra.module';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;
@@ -15,7 +15,7 @@ describe('SignInComponent', () => {
       providers: [
         AuthorizeCustomerService
       ],
-      imports: [ComponentsModule, HttpClientTestingModule]
+      imports: [ComponentsModule, InfraModule]
     })
     .compileComponents();
 
