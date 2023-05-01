@@ -2,7 +2,9 @@
 
 .container {
   height: 100vh;
-
+  margin: 0;
+  padding: 0;
+  max-width: unset;
   display: flex;
   align-items: stretch;
 

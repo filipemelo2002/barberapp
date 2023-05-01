@@ -2,9 +2,11 @@
 
 .container {
   height: 100vh;
-
   display: flex;
   align-items: stretch;
+  margin: 0;
+  padding: 0;
+  max-width: unset;
 
   .content {
     display: flex;
