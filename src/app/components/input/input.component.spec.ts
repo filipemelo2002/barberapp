@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { InputComponent } from './input.component';
 import { FormsModule } from '@angular/forms';
@@ -36,13 +36,13 @@ describe('InputComponent', () => {
     expect(input.getAttribute('placeholder')).toEqual('E-Mail');
   });
 
-  it('should render value', () => {
+  it('should render value',  fakeAsync(() => {
     component.value = 'filipe@test.com';
     fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      expect(input.value).toEqual('filipe@test.com');
-    });
-  });
+    tick();
+    input = fixture.nativeElement.querySelector('input') as HTMLInputElement;
+    expect(input.value).toEqual('filipe@test.com');
+  }));
 
   it('should emit onChange event', () => {
     component.valueChange = jasmine.createSpyObj<EventEmitter<string>>(
