@@ -9,6 +9,7 @@ import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { RetrieveUserIdService } from './use-cases/retrieve-user-id.service';
 import { StoreUserService } from './use-cases/store-user.service';
 import { InfraModule } from '@infra/infra.module';
+import { CreateCustomerService } from './use-cases/create-customer.service';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { InfraModule } from '@infra/infra.module';
     AuthorizeCustomerService,
     RetrieveUserIdService,
     AuthGuardGuard,
-    StoreUserService
+    StoreUserService,
+    CreateCustomerService
   ],
   exports: [
     SignInComponent,
