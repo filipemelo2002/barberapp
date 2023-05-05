@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { ComponentsModule } from '@components/components.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { GetCustomerLocalstorageService } from './user-cases/get-customer-localstorage.service';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -12,7 +13,10 @@ describe('DashboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent, ToolbarComponent ],
-      imports: [ComponentsModule, RouterTestingModule]
+      imports: [ComponentsModule, RouterTestingModule],
+      providers: [
+        GetCustomerLocalstorageService
+      ]
     })
     .compileComponents();
 
