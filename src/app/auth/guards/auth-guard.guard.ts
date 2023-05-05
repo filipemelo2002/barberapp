@@ -28,7 +28,7 @@ export class AuthGuardGuard {
         name: customer.name,
         email: customer.email,
         phone: customer.phone
-      }))
+      }, customer.id))
 
     } catch (exception) {
       this.router.navigateByUrl('/sign-in');
