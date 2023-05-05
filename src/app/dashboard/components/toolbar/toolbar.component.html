@@ -6,8 +6,8 @@
     <a [routerLink]="['my-appointments']" class="header_link">Minha agenda</a>
     <div class="header_content__profile">
       <div>
-        <span>Bem-Vindo,</span>
-        <a [routerLink]="['profile']">Filipe Melo</a>
+        <span>Bem-Vindo(a),</span>
+        <a [routerLink]="['profile']">{{name}}</a>
       </div>
     </div>
     <button type="button" (click)="signOut()">
