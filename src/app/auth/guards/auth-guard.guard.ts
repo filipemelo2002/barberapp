@@ -1,22 +1,40 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { RetrieveUserIdService } from '@auth/use-cases/retrieve-user-id.service';
+import { StoreUserService } from '@auth/use-cases/store-user.service';
+import { Customer } from '@entities/customer';
+import { HttpClientProviderService } from '@infra/services/http-client-provider.service';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class AuthGuardGuard {
 
-  constructor(private retrieveUserId: RetrieveUserIdService, private router: Router) {
+  constructor(private retrieveUserId: RetrieveUserIdService,
+    private router: Router,
+    private httpClient: HttpClientProviderService, private storeUserService: StoreUserService) {
 
   }
-  canActivate(): boolean {
+  async canActivate(): Promise<boolean> {
 
-    const activate = !!this.retrieveUserId.execute();
+    const user = this.retrieveUserId.execute();
 
-    if(!activate) {
+    try {
+      const id = user?.id;
+      const {customer} = await firstValueFrom(this.httpClient.get<{customer: Customer}>(`/customers/${id}`, {
+        withCredentials: true
+      }))
+
+      this.storeUserService.execute(new Customer({
+        name: customer.name,
+        email: customer.email,
+        phone: customer.phone
+      }))
+
+    } catch (exception) {
       this.router.navigateByUrl('/sign-in');
     }
 
-    return !!this.retrieveUserId.execute();
+    return !!user;
   }
 
 }
