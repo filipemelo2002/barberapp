@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetUserLocalstorageService } from './get-user-localstorage.service';
+import { GetCustomerLocalstorageService } from './get-customer-localstorage.service';
 import { CUSTOMER_LOCAL_STORAGE_KEY } from '@constants/index';
 import { Customer } from '@entities/customer';
 
@@ -8,8 +8,8 @@ interface LocalStorageObj {
   barberapp_customer: string
 }
 
-describe('GetUserLocalstorageService', () => {
-  let service: GetUserLocalstorageService;
+describe('GetCustomerLocalstorageService', () => {
+  let service: GetCustomerLocalstorageService;
 
   const customerRaw = {id: 'whatever-id', name: 'Test', email: 'test@test.com', phone: '819999999'}
   const localStorageObj:LocalStorageObj = {
@@ -18,9 +18,9 @@ describe('GetUserLocalstorageService', () => {
 
   beforeEach(async() => {
     await TestBed.configureTestingModule({
-      providers: [GetUserLocalstorageService]
+      providers: [GetCustomerLocalstorageService]
     }).compileComponents();
-    service = TestBed.inject(GetUserLocalstorageService);
+    service = TestBed.inject(GetCustomerLocalstorageService);
   });
 
 
@@ -36,7 +36,7 @@ describe('GetUserLocalstorageService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return the user', () => {
+  it('should return the customer', () => {
     const response = service.execute();
 
     expect(response).toBeTruthy();

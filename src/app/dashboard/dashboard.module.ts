@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { MyAppointmentsComponent } from './pages/my-appointments/my-appointments.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { GetUserLocalstorageService } from './user-cases/get-user-localstorage.service';
+import { GetCustomerLocalstorageService } from './user-cases/get-customer-localstorage.service';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { GetUserLocalstorageService } from './user-cases/get-user-localstorage.s
     NgbModule
   ],
   providers: [
-    GetUserLocalstorageService
+    GetCustomerLocalstorageService
   ],
   exports: [DashboardComponent, AppointmentComponent, MyAppointmentsComponent]
 })

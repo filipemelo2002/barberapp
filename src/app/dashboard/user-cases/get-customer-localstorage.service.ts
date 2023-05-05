@@ -3,25 +3,25 @@ import { CUSTOMER_LOCAL_STORAGE_KEY } from '@constants/index';
 import { Customer } from '@entities/customer';
 
 @Injectable()
-export class GetUserLocalstorageService {
+export class GetCustomerLocalstorageService {
 
   constructor() { }
 
   execute() {
-    const userRaw = localStorage.getItem(CUSTOMER_LOCAL_STORAGE_KEY);
+    const customerRaw = localStorage.getItem(CUSTOMER_LOCAL_STORAGE_KEY);
 
-    if (!userRaw) {
+    if (!customerRaw) {
       return null;
     }
     try {
-      const user = JSON.parse(userRaw);
+      const customer = JSON.parse(customerRaw);
 
       return {
         customer: new Customer({
-          name: user.name,
-          email: user.email,
-          phone: user.phone
-        }, user.id),
+          name: customer.name,
+          email: customer.email,
+          phone: customer.phone
+        }, customer.id),
       }
     } catch (exception) {
       return null;
