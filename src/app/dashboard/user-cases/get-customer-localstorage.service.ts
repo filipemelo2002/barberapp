@@ -21,7 +21,7 @@ export class GetCustomerLocalstorageService {
           name: customer.name,
           email: customer.email,
           phone: customer.phone
-        }, customer._id),
+        }, customer.id),
       }
     } catch (exception) {
       return null;
