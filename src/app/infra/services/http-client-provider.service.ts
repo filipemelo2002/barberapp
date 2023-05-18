@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class HttpClientProviderService {
-  private baseURL = 'http://localhost:3000';
+  private baseURL = 'https://barber-backend-qmrl.onrender.com';
   constructor(private httpClient: HttpClient) {}
 
   get<T>(path: string, options?: object): Observable<T> {
