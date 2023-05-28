@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class HttpClientProviderService {
-  private baseURL = 'https://barber-backend-qmrl.onrender.com';
+  private baseURL = 'https://clownfish-app-grafh.ondigitalocean.app';
   constructor(private httpClient: HttpClient) {}
 
   get<T>(path: string, options?: object): Observable<T> {
