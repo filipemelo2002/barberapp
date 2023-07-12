@@ -1,5 +1,8 @@
+import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientProviderService } from '@infra/services/http-client-provider.service';
+import { catchError, throwError } from 'rxjs';
+import { CreateCustomerError } from 'src/domain/entities/errors/create-customer-error';
 
 interface CreateCustomerServiceRequest {
   name: string;
@@ -16,6 +19,14 @@ export class CreateCustomerService {
     const  {name, email, password, phone} = request;
     return this.httpClient.post<void>('/customers', {
       name, email, password, phone
-    });
+    }).pipe(catchError(this.errorHandler));
+  }
+
+  private errorHandler(error: HttpErrorResponse) {
+    if (error.status === HttpStatusCode.Conflict) {
+      const field = error.error.field;
+      return throwError(() => new CreateCustomerError('Erro ao criar conta', `Por favor, utilize outro ${field} ou faça Login.`))
+    }
+    return throwError(() => new Error('Erro ao criar conta'))
   }
 }
