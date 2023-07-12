@@ -26,7 +26,7 @@
     "paths": {
       "@auth/*": ["./src/app/auth/*"],
       "@components/*": ["./src/app/components/*"],
-      "@entities/*": ["./src/app/entities/*"],
+      "@entities/*": ["src/domain/entities/*"],
       "@constants/*": ["./src/app/constants/*"],
       "@infra/*": ["./src/app/infra/*"]
     }
