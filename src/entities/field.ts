@@ -37,7 +37,7 @@ export class Field {
     this.props.validator = validator;
   }
 
-  private isValid(): Error | null {
+  isValid(): Error | null {
     if (!this.props.validator) {
       return null;
     }
