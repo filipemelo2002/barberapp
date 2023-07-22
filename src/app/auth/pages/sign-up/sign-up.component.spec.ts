@@ -44,5 +44,15 @@ describe('SignUpComponent', () => {
     const button = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
     button.click();
     expect(createCustomerService.execute).toHaveBeenCalled();
-  })
+  });
+
+  it('should not make the request if fields arent valid', () => {
+    component.name.value = 'Test';
+    component.email.value = 'invalid-email';
+    component.password.value = 'test@98749';
+    component.phone.value = '+55899999999';
+    const button = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
+    button.click();
+    expect(createCustomerService.execute).not.toHaveBeenCalled();
+  });
 });
