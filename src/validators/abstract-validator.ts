@@ -1,5 +1,5 @@
 export interface Validator {
-  validate(request: string): boolean;
+  validate(request: string): Error | null;
 
   setNext(handler: Validator): Validator;
 
@@ -14,11 +14,11 @@ export class AbstractValidator implements Validator {
     return handler;
   }
 
-  public validate(request: string): boolean {
+  public validate(request: string): Error | null {
     if (this.nextValidator) {
       return this.nextValidator.validate(request);
     }
 
-    return true;
+    return null;
   }
 }

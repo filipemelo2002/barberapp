@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { StoreUserService } from './store-user.service';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 
 describe('StoreUserService', () => {
   let service: StoreUserService;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Toast } from '@entities/toast';
+import { Toast } from 'src/entities/toast';
 
 export interface ToastServiceRequest {
   header: string;

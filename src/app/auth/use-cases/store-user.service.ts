@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CUSTOMER_LOCAL_STORAGE_KEY } from '@constants/index';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 
 @Injectable({
   providedIn: 'root'

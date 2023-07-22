@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { GetCustomerLocalstorageService } from './get-customer-localstorage.service';
 import { CUSTOMER_LOCAL_STORAGE_KEY } from '@constants/index';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 
 interface LocalStorageObj {
   barberapp_customer: string

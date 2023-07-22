@@ -19,6 +19,6 @@ describe('AbstractValidator', () => {
     const validator = new AbstractValidator();
     abstractValidator.setNext(validator);
 
-    expect(abstractValidator.validate('test')).toBeTrue();
+    expect(abstractValidator.validate('test')).toBeNull();
   })
 })

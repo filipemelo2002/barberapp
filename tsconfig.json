@@ -19,6 +19,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "strictPropertyInitialization": false,
     "lib": [
       "ES2022",
       "dom"
@@ -26,7 +27,9 @@
     "paths": {
       "@auth/*": ["./src/app/auth/*"],
       "@components/*": ["./src/app/components/*"],
-      "@entities/*": ["src/domain/entities/*"],
+      "@entities/*": ["src/entities/*"],
+      "@errors/*": ["src/errors/*"],
+      "@validators/*": ["src/validators/*"],
       "@constants/*": ["./src/app/constants/*"],
       "@infra/*": ["./src/app/infra/*"]
     }

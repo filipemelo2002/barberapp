@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { RetrieveUserIdService } from '@auth/use-cases/retrieve-user-id.service';
 import { StoreUserService } from '@auth/use-cases/store-user.service';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 import { HttpClientProviderService } from '@infra/services/http-client-provider.service';
 import { firstValueFrom } from 'rxjs';
 

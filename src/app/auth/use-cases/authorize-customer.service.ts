@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 import { HttpClientProviderService } from '@infra/services/http-client-provider.service';
 import { Observable } from 'rxjs';
 

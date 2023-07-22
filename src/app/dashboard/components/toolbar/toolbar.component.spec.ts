@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ToolbarComponent } from './toolbar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { GetCustomerLocalstorageService } from '../../user-cases/get-customer-localstorage.service';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;

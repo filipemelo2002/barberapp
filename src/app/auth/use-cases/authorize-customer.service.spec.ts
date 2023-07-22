@@ -3,7 +3,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing'
 import { AuthorizeCustomerService } from './authorize-customer.service';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
-import { Customer } from '@entities/customer';
+import { Customer } from 'src/entities/customer';
 import { InfraModule } from '@infra/infra.module';
 
 describe('AuthorizeCustomerService', () => {
