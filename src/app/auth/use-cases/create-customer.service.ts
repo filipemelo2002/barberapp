@@ -4,7 +4,7 @@ import { HttpClientProviderService } from '@infra/services/http-client-provider.
 import { catchError, throwError } from 'rxjs';
 import { CreateCustomerError } from '@errors/create-customer-error';
 
-interface CreateCustomerServiceRequest {
+export interface CreateCustomerServiceRequest {
   name: string;
   email: string;
   password: string;
