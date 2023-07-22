@@ -37,6 +37,10 @@ describe('SignUpComponent', () => {
   });
 
   it('should call the signIn method', () => {
+    component.name.value = 'Test';
+    component.email.value = 'test@email.com';
+    component.password.value = 'test@98749';
+    component.phone.value = '+55899999999';
     const button = fixture.nativeElement.querySelector('button') as HTMLButtonElement;
     button.click();
     expect(createCustomerService.execute).toHaveBeenCalled();
