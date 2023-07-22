@@ -1,7 +1,7 @@
 import { Validator } from "../validators/abstract-validator";
 
 export interface FieldProps {
-  name?: string;
+  name: string;
   value: string;
   validator?: Validator;
   error: boolean;
@@ -17,7 +17,7 @@ export class Field {
     return this.props.name;
   }
 
-  set name(name: string | undefined) {
+  set name(name: string) {
     this.props.name = name;
   }
 
