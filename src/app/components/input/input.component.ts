@@ -18,6 +18,9 @@ export class InputComponent {
   @Output()
   valueChange = new EventEmitter<string>();
 
+  @Input()
+  error?: boolean;
+
   handleChange($event: string) {
     this.valueChange.emit($event);
   }

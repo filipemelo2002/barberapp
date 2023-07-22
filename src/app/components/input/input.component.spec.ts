@@ -55,4 +55,11 @@ describe('InputComponent', () => {
     expect(component.valueChange.emit).toHaveBeenCalled();
     expect(component.valueChange.emit).toHaveBeenCalledWith('testing@email.com');
   });
+
+  it('should add class if error is true', () => {
+    component.error = true;
+    fixture.detectChanges();
+    const container = fixture.nativeElement.querySelector('.error') as HTMLDivElement;
+    expect(container).toBeTruthy();
+  });
 });
