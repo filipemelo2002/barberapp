@@ -1,3 +1,4 @@
+import { ValidatorBuilder } from "@validators/validator-builder";
 import { Field } from "./field";
 import { Form } from "./form"
 
@@ -24,5 +25,18 @@ describe('Form', () => {
     expect(response).toEqual({
       name: 'Test'
     })
+  });
+
+  it('should be true if form is valid', () => {
+    dummyField.validator = new ValidatorBuilder().required().build();
+    expect(form.isFormValid()).toBeFalse();
+    dummyField.value = 'Test';
+    expect(form.isFormValid()).toBeTrue();
+  });
+
+  it('should validate all fields', () => {
+    dummyField.validator = new ValidatorBuilder().required().build();
+    form.validateFields();
+    expect(dummyField.error).toBeTruthy();
   })
 })

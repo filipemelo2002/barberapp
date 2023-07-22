@@ -18,7 +18,11 @@ export class Form {
     this.fields.forEach(field => field.validate());
   }
 
-  getFieldByName(name: string) {
-    return this.fields.find(field => field.name === name);
+  isFormValid() {
+    return this.fields.map(field => field.isValid()).every(result => result === null);
+  }
+
+  getFieldByName(name: string): Field | null {
+    return this.fields.find(field => field.name === name) || null;
   }
 }
