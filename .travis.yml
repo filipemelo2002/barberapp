@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - 16.14
+branches:
+  only:
+  - main
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng test --no-watch --code-coverage --browsers=ChromeHeadless
+  - ng build barberapp --configuration production
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/barberapp
+  on:
+    branch: main
