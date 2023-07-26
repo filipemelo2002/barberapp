@@ -9,7 +9,8 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng test --no-watch --code-coverage --browsers=ChromeHeadless
+  - npm run test:cov
+  - npm run test:up
   - ng build barberapp --configuration production
 
 deploy:
