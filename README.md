@@ -1,4 +1,5 @@
 # Barberapp
+[![Coverage Status](https://coveralls.io/repos/github/filipemelo2002/barberapp/badge.svg?branch=main)](https://coveralls.io/github/filipemelo2002/barberapp?branch=main)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
