@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:cov": "ng test --no-watch --code-coverage --browsers=ChromeHeadless",
-    "test:up": "coveralls < coverage/barberapp/lcov.info"
+    "test:up": "coveralls -v < coverage/barberapp/lcov.info"
   },
   "private": true,
   "dependencies": {
