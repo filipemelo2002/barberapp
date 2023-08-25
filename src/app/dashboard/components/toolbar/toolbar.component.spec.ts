@@ -4,6 +4,7 @@ import { ToolbarComponent } from './toolbar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { GetCustomerLocalstorageService } from '../../user-cases/get-customer-localstorage.service';
 import { Customer } from 'src/entities/customer';
+import { InfraModule } from '@infra/infra.module';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -15,7 +16,7 @@ describe('ToolbarComponent', () => {
     getCustomerLocalStorage = jasmine.createSpyObj<GetCustomerLocalstorageService>('getCustomerLocalStorage', ['execute']);
     await TestBed.configureTestingModule({
       declarations: [ ToolbarComponent ],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, InfraModule],
       providers: [
         {
           provide: GetCustomerLocalstorageService,
