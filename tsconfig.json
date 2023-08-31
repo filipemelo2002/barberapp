@@ -31,7 +31,8 @@
       "@errors/*": ["src/errors/*"],
       "@validators/*": ["src/validators/*"],
       "@constants/*": ["./src/app/constants/*"],
-      "@infra/*": ["./src/app/infra/*"]
+      "@infra/*": ["./src/app/infra/*"],
+      "@env/*": ["./src/environments/*"]
     }
   },
   "angularCompilerOptions": {

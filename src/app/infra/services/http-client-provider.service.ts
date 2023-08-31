@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class HttpClientProviderService {
-  private baseURL = 'https://clownfish-app-grafh.ondigitalocean.app';
+  private baseURL = environment.apiURL;
   constructor(private httpClient: HttpClient) {}
 
   get<T>(path: string, options?: object): Observable<T> {
