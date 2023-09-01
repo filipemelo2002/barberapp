@@ -6,7 +6,7 @@
         <h1>Faça seu logon</h1>
         <app-input type="email" placeholder="E-Mail" [(value)]="email"/>
         <app-input type="password" placeholder="Senha" [(value)]="password"/>
-        <app-button [disabled]="loading$ | async" (onClick)="signIn()" type="button">Login</app-button>
+        <app-button [disabled]="loading$ | async" (onClick)="signIn()" type="button" [loading]="loading$ | async">Login</app-button>
         <a routerLink="/sign-up">Não possui conta? Cadastre-se agora</a>
       </form>
     </div>
