@@ -9,7 +9,7 @@
         <app-input type="email" placeholder="E-Mail" [(value)]="email.value" [error]="email.error"/>
         <app-input type="password" placeholder="Senha" [(value)]="password.value" [error]="password.error"/>
         <app-input type="text" placeholder="Telefone" [(value)]="phone.value" [error]="phone.error"/>
-        <app-button [disabled]="loading$ | async" (onClick)="signUp()" type="button">Cadastrar</app-button>
+        <app-button [loading]="loading$ | async" [disabled]="loading$ | async" (onClick)="signUp()" type="button">Cadastrar</app-button>
         <a routerLink="/sign-in">Já possui conta? Faça o Login</a>
       </form>
     </div>
