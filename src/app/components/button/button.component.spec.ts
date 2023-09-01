@@ -35,4 +35,22 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
     expect(button.getAttribute('type')).toEqual('submit')
   })
+
+  it('should add css class when loading', () => {
+    component.loading = true;
+    fixture.detectChanges();
+    expect(button.getAttribute('class')).toContain('loading')
+  })
+
+  it('should disable button if loading', () => {
+    component.loading = true;
+    fixture.detectChanges();
+    expect(button.disabled).toBeTruthy()
+  })
+
+  it('should disable button if disabled is on', () => {
+    component.disabled = true;
+    fixture.detectChanges();
+    expect(button.disabled).toBeTruthy()
+  })
 });
