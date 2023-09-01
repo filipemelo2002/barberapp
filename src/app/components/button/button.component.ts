@@ -15,6 +15,9 @@ export class ButtonComponent {
   @Input()
   disabled!: boolean | null;
 
+  @Input()
+  loading!: boolean | null;
+
   handleClick($event: Event) {
     this.onClick.emit($event);
   }
